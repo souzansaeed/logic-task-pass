@@ -1,0 +1,83 @@
+Q1/Write a method that will remove any given character from a String?
+
+string="Hello World"
+string=string[:5]
+print(string)
+
+Q2/Write a program to find all prime numbers up to a given range
+of numbers?
+static void Main(string[] args)
+{
+bool flag = true;
+Console.WriteLine("veuillez entrez votre premier nombre ");
+int nbr1 = int.Parse(Console.ReadLine());
+Console.WriteLine("veuillez entrez votre 2eme nombre ");
+int bnr2 = int.Parse(Console.ReadLine());
+for(int i = nbr1; i <= bnr2; i++)
+{
+for(int j = 2; j <= i - 1; j++)
+{
+
+if (i%j == 0)
+{
+flag = false;
+break;
+}else
+{
+flag = true;
+}
+}
+
+if (flag == true)
+{
+Console.Write("{0} ", i);
+}
+}
+
+}
+}
+
+
+Q3/write a function that count how many the given character repeated
+in a given string?
+
+using System;
+ 
+class GFG
+{
+// Function to count the character 'a'
+static int countChar(string str, char x)
+{
+    int count = 0;
+    int n = 10;
+    for (int i = 0; i < str.Length; i++)
+        if (str[i] == x)
+            count++;
+ 
+    // atleast k repetition are required
+    int repetitions = n / str.Length;
+    count = count * repetitions;
+ 
+    // if n is not the multiple of the
+    // string size check for the remaining
+    // repeating character.
+    for (int i = 0;
+             i < n % str.Length; i++)
+    {
+        if (str[i] == x)
+            count++;
+    }
+ 
+    return count;
+}
+ 
+// Driver code
+public static void Main()
+{
+    string str = "abcac";
+    Console.WriteLine(countChar(str, 'a'));
+}
+}
+
+
+
